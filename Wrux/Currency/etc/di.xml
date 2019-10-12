@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product\PriceModifier\Composite">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="catalog_compound_price" xsi:type="string">Wrux\Currency\Model\Product\PriceModifier</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="importCompoundPriceCommand" xsi:type="object">Wrux\Currency\Console\Command\ImportCompoundPriceCommand</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
